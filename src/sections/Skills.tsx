@@ -12,12 +12,12 @@ const tools = [
 ];
 
 const skills = [
-    { label: 'Estrategia Digital', level: 92 },
-    { label: 'Social Media', level: 90 },
-    { label: 'Publicidad Pagada', level: 85 },
-    { label: 'Creación de Contenido', level: 88 },
-    { label: 'Análisis de Datos', level: 78 },
-    { label: 'Branding & Identidad', level: 82 },
+    { label: 'Estrategia Digital', level: 92, cert: null },
+    { label: 'Social Media', level: 90, cert: null },
+    { label: 'Creación de Contenido', level: 88, cert: null },
+    { label: 'Análisis de Datos', level: 78, cert: null },
+    { label: 'Branding & Identidad', level: 82, cert: null },
+    { label: 'Inglés', level: 0, cert: '/media/certificado-ingles.pdf' },
 ];
 
 export function Skills() {
@@ -84,12 +84,22 @@ export function Skills() {
                         <div
                             key={skill.label}
                             className={cn(
-                                'transition-all duration-800 ease-out-quart flex items-center bg-white/5 p-4 rounded-xl border border-white/10',
+                                'transition-all duration-800 ease-out-quart flex items-center justify-between bg-white/5 p-4 rounded-xl border border-white/10',
                                 skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                             )}
                             style={{ transitionDelay: `${i * 100}ms` }}
                         >
                             <span className="text-base font-medium text-exvia-white">{skill.label}</span>
+                            {skill.cert && (
+                                <a
+                                    href={skill.cert}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="ml-3 shrink-0 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-geist-mono uppercase tracking-wider bg-exvia-violet/20 border border-exvia-violet/40 text-exvia-violet hover:bg-exvia-violet hover:text-white transition-all duration-300"
+                                >
+                                    <span>🎓</span> Ver certificado
+                                </a>
+                            )}
                         </div>
                     ))}
                 </div>
