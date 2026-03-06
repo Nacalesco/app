@@ -49,10 +49,9 @@ export interface HeroConfig {
 export const heroConfig: HeroConfig = {
   name: "Valentina Rastrilla Heindl",
   roles: [
-    "Comunicación Digital",
-    "Gestión de Marca",
-    "Social Media",
-    "Publicidad Digital",
+    "Marketing Digital",
+    "Publicidad",
+    "Estrategia de Contenidos",
     "Content Creator",
   ],
   backgroundImage: "/images/hero-bg.jpg",
@@ -220,7 +219,7 @@ export const portfolioConfig: PortfolioConfig = {
     {
       title: "Golden Groove Sunset",
       category: "Promoción de Eventos & Content Creation",
-      year: "2026",
+      year: "2025",
       image: "/images/portfolio-3.jpg",
       description: "Desarrollo de contenido audiovisual para evento de música electrónica en Antares del Faro. Producción de video promocional capturando la esencia del evento y su atmósfera única.",
       objectives: [
@@ -237,8 +236,8 @@ export const portfolioConfig: PortfolioConfig = {
     },
     {
       title: "Agencia de Marketing Digital",
-      category: "Desarrollo de Marca & Estrategia Comercial",
-      year: "2026",
+      category: "Content Creation",
+      year: "2025",
       image: "/images/portfolio-4.jpg",
       description: "Propuesta integral para desarrollo de agencia de marketing digital, incluyendo análisis de mercado, definición de servicios, estrategia comercial y plan de crecimiento.",
       objectives: [

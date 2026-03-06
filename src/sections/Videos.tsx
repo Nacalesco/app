@@ -9,6 +9,7 @@ interface VideoPlayerProps {
     title: string;
     description: string;
     src: string;
+    thumbnail?: string;
   };
   index: number;
 }
@@ -56,6 +57,7 @@ function VideoPlayer({ video, index }: VideoPlayerProps) {
         <video
           ref={videoRef}
           src={video.src}
+          poster={video.thumbnail}
           className="w-full h-full object-contain"
           onEnded={handleVideoEnd}
           playsInline
