@@ -19,7 +19,7 @@ export function ContactForm() {
         const body = encodeURIComponent(
             `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
         );
-        const mailtoUrl = `mailto:valentina.rastrilla@email.com?subject=${subject}&body=${body}`;
+        const mailtoUrl = `mailto:valentina.rastrilla@gmail.com?subject=${subject}&body=${body}`;
 
         setTimeout(() => {
             window.open(mailtoUrl, '_self');
@@ -66,7 +66,7 @@ export function ContactForm() {
                         {/* Contact details */}
                         <div className="space-y-4">
                             <a
-                                href="mailto:valentina.rastrilla@email.com"
+                                href="mailto:valentina.rastrilla@gmail.com"
                                 className="flex items-center gap-3 text-exvia-base-black/70 hover:text-exvia-violet transition-colors group"
                             >
                                 <div className="w-10 h-10 rounded-full bg-exvia-violet/10 flex items-center justify-center group-hover:bg-exvia-violet group-hover:text-white transition-all duration-300">
