@@ -1,15 +1,13 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { heroConfig } from '@/config';
 
-const boxSize = 250;
-const halfBox = boxSize / 2;
+
 
 export function Hero() {
   if (!heroConfig.name && heroConfig.roles.length === 0) return null;
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,47 +16,13 @@ export function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
-    const section = e.currentTarget;
-    const rect = section.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Use CSS custom properties for GPU-accelerated transforms
-    section.style.setProperty('--mouse-x', `${x - halfBox}px`);
-    section.style.setProperty('--mouse-y', `${y - halfBox}px`);
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       id="hero"
-      className="relative w-full min-h-screen overflow-hidden bg-gradient-premium cursor-none"
-      onMouseMove={handleMouseMove}
-      style={{ '--mouse-x': 'calc(42vw - 125px)', '--mouse-y': 'calc(28vh - 125px)' } as React.CSSProperties}
+      className="relative w-full min-h-screen overflow-hidden bg-gradient-premium"
     >
       {/* Dynamic Background Pattern */}
       <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, var(--exvia-violet-dark) 2px, transparent 0)', backgroundSize: '40px 40px' }} />
-
-      {/* Abstract Glass Mouse Tracker */}
-      <div
-        className={cn(
-          'absolute top-0 left-0 pointer-events-none z-20 transition-opacity duration-1000',
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        )}
-        style={{
-          width: boxSize,
-          height: boxSize,
-          transform: 'translate3d(var(--mouse-x), var(--mouse-y), 0)',
-          willChange: 'transform',
-        }}
-      >
-        <div className="absolute inset-0 rounded-full glass-panel flex items-center justify-center border border-white/60 dark:border-white/20 overflow-hidden mix-blend-color-burn">
-          <div className="absolute inset-0 bg-gradient-to-tr from-exvia-violet/30 to-transparent shadow-[inset_0_0_50px_rgba(138,43,226,0.3)]" />
-          {/* Accent dot */}
-          <div className="w-2 h-2 rounded-full bg-exvia-violet/80 shadow-[0_0_10px_rgba(138,43,226,0.8)]" />
-        </div>
-      </div>
 
       {/* Role labels on sides */}
       {heroConfig.roles[0] && (

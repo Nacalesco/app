@@ -101,8 +101,8 @@ export function Portfolio() {
   const { containerRef: gridRef, visibleItems } = useStaggerAnimation(portfolioConfig.projects.length + 1, 120);
 
   return (
-    <section id="portfolio" className="w-full py-24 lg:py-32 bg-white relative">
-      <div className="absolute inset-0 bg-exvia-subtle/20" />
+    <section id="portfolio" className="w-full py-24 lg:py-32 bg-exvia-subtle/60 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-exvia-subtle/30 to-exvia-border/20" />
 
       <div className="container-large px-6 lg:px-12 relative z-10">
         {/* Header */}

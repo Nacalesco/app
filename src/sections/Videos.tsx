@@ -123,7 +123,7 @@ function VideoPlayer({ video, index }: VideoPlayerProps) {
       </div>
 
       {/* Video Info */}
-      <div className="p-6 bg-white">
+      <div className="p-6 bg-exvia-subtle/80">
         <h3 className="text-h6 font-semibold text-exvia-black mb-2">
           {video.title}
         </h3>
@@ -142,7 +142,7 @@ export function Videos() {
   const { ref: videosRef, isVisible: videosVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section id="videos" className="w-full py-24 lg:py-32 bg-exvia-subtle/30">
+    <section id="videos" className="w-full py-24 lg:py-32 bg-exvia-subtle/60">
       <div className="container-large px-6 lg:px-12">
         {/* Header */}
         <div ref={headerRef} className="max-w-2xl mb-16">

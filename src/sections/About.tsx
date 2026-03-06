@@ -104,14 +104,7 @@ export function About() {
 
             </div>
 
-            {/* Decorative abstract shape behind stats */}
-            <div
-              className={cn(
-                "absolute -right-12 -bottom-12 w-64 h-64 border border-exvia-violet/20 rounded-full transition-all duration-1000 ease-out-quart",
-                sectionVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
-              )}
-              style={{ transitionDelay: '500ms' }}
-            />
+
           </div>
 
         </div>
