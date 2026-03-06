@@ -1,4 +1,4 @@
-import { type MouseEvent, type ElementType } from 'react';
+import type { MouseEvent, ElementType } from 'react';
 import { cn } from '@/lib/utils';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { ArrowUpRight, Linkedin, Circle } from 'lucide-react';
