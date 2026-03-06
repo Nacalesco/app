@@ -9,8 +9,8 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   language: "es",
-  title: "Valentina Rastrilla Heindl | Estratega de Marketing y Comunicación",
-  description: "Portafolio profesional de Valentina Rastrilla Heindl. Especialista en marketing digital, estrategia de comunicación y gestión de marca. Proyectos para Fundación Visión Cero, EcoCraft y más.",
+  title: "Valentina Rastrilla Heindl | Marketing Digital y Comunicación",
+  description: "Portafolio profesional de Valentina Rastrilla Heindl. Especialista en marketing digital, comunicación estratégica y gestión de marca. Proyectos para Fundación Visión Cero, EcoCraft y más.",
 };
 
 // Navigation configuration
@@ -49,7 +49,6 @@ export interface HeroConfig {
 export const heroConfig: HeroConfig = {
   name: "Valentina Rastrilla Heindl",
   roles: [
-    "Estratega de Marketing",
     "Comunicación Digital",
     "Gestión de Marca",
     "Social Media",
@@ -81,7 +80,7 @@ export interface AboutConfig {
 
 export const aboutConfig: AboutConfig = {
   label: "Sobre Mí",
-  description: "Soy Valentina Rastrilla Heindl, estratega de marketing y comunicación con pasión por crear campañas digitales que conectan marcas con sus audiencias. Mi enfoque combina creatividad, análisis de datos y comprensión profunda del comportamiento del consumidor para desarrollar estrategias que generan resultados medibles. He trabajado en proyectos diversos, desde ONGs como Fundación Visión Cero hasta emprendimientos sostenibles como EcoCraft, siempre adaptando mi approach a las necesidades únicas de cada cliente.",
+  description: "Soy Valentina Rastrilla Heindl, profesional en marketing digital y comunicación estratégica. Mi trabajo se centra en entender cómo las marcas construyen su identidad y cómo esa identidad llega, de manera coherente y efectiva, a las personas correctas.\nMi experiencia combina dos áreas que se complementan: la comercial y la creativa. He trabajado en prospección, contacto con leads y desarrollo de clientes en agencias como Social Impulse Agency y JB Agencia Creativa, y también en proyectos internacionales de forma remota, lo que me dio una visión amplia de distintos contextos y rubros. Hoy me desempeño como Community Manager y Content Creator, donde participo en estrategias de comunicación digital, creación de contenido y campañas publicitarias.\nTambién he desarrollado estrategias de marketing para organizaciones como Fundación Visión Cero y EcoCraft, y colaboro en la gestión de comunicación digital de Embajadores Verdes Mar del Plata, entre otros proyectos.\nMe especializo en la intersección entre estrategia y creatividad: el análisis que da dirección y las ideas que le dan vida a una marca. Creo que el marketing funciona cuando hay una lógica detrás de cada decisión, pero también cuando hay algo genuino que comunicar.",
   experienceValue: "2+",
   experienceLabel: "Años de\nExperiencia",
   stats: [
@@ -236,6 +235,24 @@ export const portfolioConfig: PortfolioConfig = {
       ],
       results: "Video promocional que transmite la experiencia única del evento, utilizado en campañas de difusión en redes sociales."
     },
+    {
+      title: "Agencia de Marketing Digital",
+      category: "Desarrollo de Marca & Estrategia Comercial",
+      year: "2026",
+      image: "/images/portfolio-4.jpg",
+      description: "Propuesta integral para desarrollo de agencia de marketing digital, incluyendo análisis de mercado, definición de servicios, estrategia comercial y plan de crecimiento.",
+      objectives: [
+        "Definir propuesta de valor diferencial",
+        "Establecer estructura de servicios y precios",
+        "Desarrollar estrategia de captación de clientes"
+      ],
+      strategies: [
+        "Análisis de competencia y oportunidades de mercado",
+        "Definición de nichos especializados",
+        "Plan de marketing para la propia agencia"
+      ],
+      results: "Documento estratégico completo para lanzamiento y operación de agencia de marketing digital."
+    },
   ],
   cta: {
     label: "",
@@ -291,7 +308,7 @@ export interface CTAConfig {
 }
 
 export const ctaConfig: CTAConfig = {
-  tags: ["Estratega de Marketing", "Social Media Manager", "Content Creator"],
+  tags: ["Social Media Manager", "Content Creator"],
   heading: "¿Listo para Impulsar tu Marca?",
   description: "Estoy aquí para ayudarte a desarrollar estrategias de marketing que generen resultados reales. Desde la planificación hasta la ejecución, trabajemos juntos para llevar tu marca al siguiente nivel.",
   buttonText: "Iniciar Proyecto",
@@ -327,7 +344,7 @@ export interface FooterConfig {
 
 export const footerConfig: FooterConfig = {
   logo: "Valentina Rastrilla Heindl",
-  description: "Estratega de Marketing y Comunicación especializada en crear conexiones significativas entre marcas y sus audiencias.",
+  description: "Profesional en Marketing Digital y Comunicación dedicada a crear conexiones significativas entre marcas y sus audiencias.",
   columns: [
     {
       title: "Navegación",
