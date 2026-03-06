@@ -85,7 +85,7 @@ export const aboutConfig: AboutConfig = {
   experienceValue: "3+",
   experienceLabel: "Años de\nExperiencia",
   stats: [
-    { value: "15+", label: "Proyectos\nCompletados" },
+    { value: "10+", label: "Proyectos\nCompletados" },
     { value: "10+", label: "Clientes\nSatisfechos" },
     { value: "35%", label: "Promedio de\nCrecimiento" },
   ],
@@ -314,8 +314,8 @@ export const ctaConfig: CTAConfig = {
   heading: "¿Listo para Impulsar tu Marca?",
   description: "Estoy aquí para ayudarte a desarrollar estrategias de marketing que generen resultados reales. Desde la planificación hasta la ejecución, trabajemos juntos para llevar tu marca al siguiente nivel.",
   buttonText: "Iniciar Proyecto",
-  buttonHref: "mailto:valentina.rastrilla@email.com",
-  email: "valentina.rastrilla@email.com",
+  buttonHref: "mailto:valchurastrilla@gmail.com",
+  email: "valchurastrilla@gmail.com",
   backgroundImage: "/images/cta-bg.jpg",
 };
 
@@ -370,7 +370,7 @@ export const footerConfig: FooterConfig = {
     {
       title: "Contacto",
       links: [
-        { label: "valentina.rastrilla@email.com", href: "mailto:valentina.rastrilla@email.com" },
+        { label: "valchurastrilla@gmail.com", href: "mailto:valchurastrilla@gmail.com" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/valentina-rastrilla-heindl?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" },
       ],
     },
