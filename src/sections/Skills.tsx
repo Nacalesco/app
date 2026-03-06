@@ -4,17 +4,11 @@ import { useScrollAnimation, useStaggerAnimation } from '@/hooks/useScrollAnimat
 
 const tools = [
     { name: 'Meta Ads', category: 'Publicidad', icon: '📣', color: 'from-blue-500/20 to-blue-600/10' },
-    { name: 'Google Analytics', category: 'Analítica', icon: '📊', color: 'from-orange-400/20 to-orange-500/10' },
     { name: 'Instagram', category: 'Social Media', icon: '📸', color: 'from-pink-500/20 to-purple-500/10' },
     { name: 'Facebook', category: 'Social Media', icon: '👥', color: 'from-blue-600/20 to-blue-700/10' },
     { name: 'Canva', category: 'Diseño', icon: '🎨', color: 'from-teal-400/20 to-cyan-500/10' },
-    { name: 'Hootsuite', category: 'Gestión', icon: '🦉', color: 'from-exvia-violet/20 to-exvia-violet-dark/10' },
-    { name: 'Google Ads', category: 'Publicidad', icon: '🎯', color: 'from-yellow-400/20 to-yellow-500/10' },
-    { name: 'Mailchimp', category: 'Email Mkt', icon: '✉️', color: 'from-amber-400/20 to-amber-500/10' },
     { name: 'TikTok', category: 'Social Media', icon: '🎵', color: 'from-slate-400/20 to-slate-500/10' },
-    { name: 'Notion', category: 'Planificación', icon: '📋', color: 'from-neutral-400/20 to-neutral-500/10' },
-    { name: 'WordPress', category: 'Web', icon: '🌐', color: 'from-sky-500/20 to-sky-600/10' },
-    { name: 'Adobe Suite', category: 'Diseño', icon: '🖌️', color: 'from-red-500/20 to-red-600/10' },
+    { name: 'Trello', category: 'Planificación', icon: '📋', color: 'from-blue-400/20 to-blue-500/10' },
 ];
 
 const skills = [
@@ -85,26 +79,17 @@ export function Skills() {
                 </div>
 
                 {/* Skills bars */}
-                <div ref={skillsRef} className="grid lg:grid-cols-2 gap-x-20 gap-y-6">
+                <div ref={skillsRef} className="grid lg:grid-cols-2 gap-x-20 gap-y-4">
                     {skills.map((skill, i) => (
                         <div
                             key={skill.label}
                             className={cn(
-                                'transition-all duration-800 ease-out-quart',
+                                'transition-all duration-800 ease-out-quart flex items-center bg-white/5 p-4 rounded-xl border border-white/10',
                                 skillsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                             )}
                             style={{ transitionDelay: `${i * 100}ms` }}
                         >
-                            <div className="flex justify-between items-center mb-2">
-                                <span className="text-sm font-medium text-exvia-white">{skill.label}</span>
-                                <span className="text-xs font-geist-mono text-exvia-violet">{skill.level}%</span>
-                            </div>
-                            <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                                <div
-                                    className="h-full bg-gradient-to-r from-exvia-violet-dark to-exvia-violet-light rounded-full transition-all duration-1000 ease-out-quart"
-                                    style={{ width: skillsVisible ? `${skill.level}%` : '0%', transitionDelay: `${i * 100 + 200}ms` }}
-                                />
-                            </div>
+                            <span className="text-base font-medium text-exvia-white">{skill.label}</span>
                         </div>
                     ))}
                 </div>

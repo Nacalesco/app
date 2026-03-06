@@ -82,12 +82,11 @@ export interface AboutConfig {
 export const aboutConfig: AboutConfig = {
   label: "Sobre Mí",
   description: "Soy Valentina Rastrilla Heindl, estratega de marketing y comunicación con pasión por crear campañas digitales que conectan marcas con sus audiencias. Mi enfoque combina creatividad, análisis de datos y comprensión profunda del comportamiento del consumidor para desarrollar estrategias que generan resultados medibles. He trabajado en proyectos diversos, desde ONGs como Fundación Visión Cero hasta emprendimientos sostenibles como EcoCraft, siempre adaptando mi approach a las necesidades únicas de cada cliente.",
-  experienceValue: "3+",
+  experienceValue: "2+",
   experienceLabel: "Años de\nExperiencia",
   stats: [
-    { value: "10+", label: "Proyectos\nCompletados" },
-    { value: "10+", label: "Clientes\nSatisfechos" },
-    { value: "35%", label: "Promedio de\nCrecimiento" },
+    { value: "5+", label: "Proyectos\nCompletados" },
+    { value: "5+", label: "Clientes\nSatisfechos" },
   ],
   images: [
     { src: "/images/about-1.jpg", alt: "Valentina trabajando en estrategia de marketing" },
@@ -237,32 +236,14 @@ export const portfolioConfig: PortfolioConfig = {
       ],
       results: "Video promocional que transmite la experiencia única del evento, utilizado en campañas de difusión en redes sociales."
     },
-    {
-      title: "Agencia de Marketing Digital",
-      category: "Desarrollo de Marca & Estrategia Comercial",
-      year: "2026",
-      image: "/images/portfolio-4.jpg",
-      description: "Propuesta integral para desarrollo de agencia de marketing digital, incluyendo análisis de mercado, definición de servicios, estrategia comercial y plan de crecimiento.",
-      objectives: [
-        "Definir propuesta de valor diferencial",
-        "Establecer estructura de servicios y precios",
-        "Desarrollar estrategia de captación de clientes"
-      ],
-      strategies: [
-        "Análisis de competencia y oportunidades de mercado",
-        "Definición de nichos especializados",
-        "Plan de marketing para la propia agencia"
-      ],
-      results: "Documento estratégico completo para lanzamiento y operación de agencia de marketing digital."
-    },
   ],
   cta: {
-    label: "¿Tienes un proyecto?",
-    heading: "Trabajemos Juntos",
-    linkText: "Iniciar Conversación",
-    linkHref: "#contact",
+    label: "",
+    heading: "",
+    linkText: "",
+    linkHref: "",
   },
-  viewAllLabel: "Ver Todos los Proyectos",
+  viewAllLabel: "",
 };
 
 // Videos section configuration
