@@ -87,8 +87,7 @@ export const aboutConfig: AboutConfig = {
     { value: "5+", label: "Clientes\nSatisfechos" },
   ],
   images: [
-    { src: "/images/about-1.jpg", alt: "Valentina trabajando en estrategia de marketing" },
-    { src: "/images/about-2.jpg", alt: "Análisis de contenido digital" },
+    { src: "/images/valentina-profile.jpg", alt: "Valentina Rastrilla Heindl - Perfil Profesional" },
   ],
 };
 
@@ -242,7 +241,7 @@ export const portfolioConfig: PortfolioConfig = {
       description: "Propuesta integral para desarrollo de agencia de marketing digital, incluyendo análisis de mercado, definición de servicios, estrategia comercial y plan de crecimiento.",
       objectives: [
         "Definir propuesta de valor diferencial",
-        "Establecer estructura de servicios y precios",
+        "Establecer estructura de servicios",
         "Desarrollar estrategia de captación de clientes"
       ],
       strategies: [
