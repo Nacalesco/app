@@ -43,13 +43,11 @@ export function About() {
                 )}
                 style={{ transitionDelay: '100ms' }}
               >
-                <h2 className="text-3xl lg:text-4xl xl:text-5xl text-exvia-base-black leading-tight font-light tracking-tight">
-                  {aboutConfig.description.split('. ').map((sentence, i, arr) => (
-                    <span key={i}>
-                      {sentence}{i < arr.length - 1 ? '. ' : ''}
-                    </span>
+                <div className="space-y-6 text-lg lg:text-xl text-exvia-base-black/80 font-light leading-relaxed">
+                  {aboutConfig.description.split('\n').map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
                   ))}
-                </h2>
+                </div>
               </div>
             )}
           </div>
