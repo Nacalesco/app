@@ -15,7 +15,7 @@ export function About() {
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-exvia-border/50 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none" />
 
       <div className="container-large px-6 lg:px-12 relative z-10">
-        <div ref={sectionRef} className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+        <div ref={sectionRef} className="grid lg:grid-cols-12 gap-10 lg:gap-24 items-center">
 
           {/* Left Column - Main Content (Spans 7 columns) */}
           <div className="lg:col-span-7 space-y-12">
@@ -60,7 +60,7 @@ export function About() {
               {aboutConfig.images && aboutConfig.images[0] && (
                 <div
                   className={cn(
-                    'w-full h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-exvia-border/50 relative group transition-all duration-800 ease-out-quart',
+                    'w-full h-[260px] sm:h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-sm border border-exvia-border/50 relative group transition-all duration-800 ease-out-quart',
                     sectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   )}
                   style={{ transitionDelay: '150ms' }}

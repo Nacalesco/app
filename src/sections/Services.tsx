@@ -70,7 +70,7 @@ export function Services() {
 
       <div className="container-large px-6 lg:px-12 relative z-10">
         {/* Header */}
-        <div ref={headerRef} className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20 lg:mb-24">
+        <div ref={headerRef} className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-20 lg:mb-24">
           {servicesConfig.label && (
             <div
               className={cn(
@@ -89,7 +89,7 @@ export function Services() {
           {servicesConfig.heading && (
             <h2
               className={cn(
-                'text-4xl lg:text-5xl font-light text-exvia-base-black mt-6 tracking-tight leading-tight transition-all duration-800 ease-out-quart',
+                'text-3xl sm:text-4xl lg:text-5xl font-light text-exvia-base-black mt-6 tracking-tight leading-tight transition-all duration-800 ease-out-quart',
                 headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               )}
               style={{ transitionDelay: '100ms' }}

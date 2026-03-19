@@ -13,7 +13,7 @@ function ProjectCard({ project, index, isVisible }: { project: any; index: numbe
   return (
     <div
       className={cn(
-        'group relative overflow-hidden bg-white/60 glass-panel rounded-3xl p-8 lg:p-10 border border-exvia-border/50 transition-all duration-700 ease-out-quart hover:shadow-2xl hover:-translate-y-2 flex flex-col h-full',
+        'group relative overflow-hidden bg-white/60 glass-panel rounded-3xl p-6 sm:p-8 lg:p-10 border border-exvia-border/50 transition-all duration-700 ease-out-quart hover:shadow-2xl hover:-translate-y-2 flex flex-col h-full',
         project.featured ? 'lg:col-span-2' : '',
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       )}
@@ -38,7 +38,7 @@ function ProjectCard({ project, index, isVisible }: { project: any; index: numbe
 
         {/* Title & Description */}
         <div className="mb-8">
-          <h3 className="text-3xl font-light tracking-tight text-exvia-base-black group-hover:text-exvia-violet-dark transition-colors duration-500 mb-4">
+          <h3 className="text-2xl sm:text-3xl font-light tracking-tight text-exvia-base-black group-hover:text-exvia-violet-dark transition-colors duration-500 mb-4">
             {project.title}
           </h3>
           <p className="text-base text-exvia-base-black/70 leading-relaxed min-h-[4rem]">
@@ -124,7 +124,7 @@ export function Portfolio() {
           {portfolioConfig.heading && (
             <h2
               className={cn(
-                'text-4xl lg:text-5xl font-light text-exvia-base-black mt-6 tracking-tight leading-tight transition-all duration-800 ease-out-quart',
+                'text-3xl sm:text-4xl lg:text-5xl font-light text-exvia-base-black mt-6 tracking-tight leading-tight transition-all duration-800 ease-out-quart',
                 headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               )}
               style={{ transitionDelay: '100ms' }}

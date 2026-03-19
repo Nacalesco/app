@@ -44,7 +44,7 @@ export function Skills() {
                     </div>
                     <h2
                         className={cn(
-                            'text-4xl lg:text-5xl font-light text-exvia-white tracking-tight leading-tight transition-all duration-800 ease-out-quart max-w-2xl',
+                            'text-3xl sm:text-4xl lg:text-5xl font-light text-exvia-white tracking-tight leading-tight transition-all duration-800 ease-out-quart max-w-2xl',
                             headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                         )}
                         style={{ transitionDelay: '100ms' }}

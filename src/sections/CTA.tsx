@@ -45,7 +45,7 @@ export function CTA() {
           {ctaConfig.heading && (
             <h2
               className={cn(
-                'text-5xl lg:text-7xl font-light text-white tracking-tight leading-tight transition-all duration-800 ease-out-quart',
+                'text-3xl sm:text-5xl lg:text-7xl font-light text-white tracking-tight leading-tight transition-all duration-800 ease-out-quart',
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               )}
               style={{ transitionDelay: '100ms' }}
@@ -58,7 +58,7 @@ export function CTA() {
           {ctaConfig.description && (
             <p
               className={cn(
-                'mt-8 text-xl lg:text-2xl font-light text-white/70 max-w-2xl mx-auto leading-relaxed transition-all duration-800 ease-out-quart',
+                'mt-6 text-base sm:text-xl lg:text-2xl font-light text-white/70 max-w-2xl mx-auto leading-relaxed transition-all duration-800 ease-out-quart',
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               )}
               style={{ transitionDelay: '200ms' }}
@@ -92,9 +92,9 @@ export function CTA() {
                 href={`mailto:${ctaConfig.email}`}
                 className="inline-flex items-center gap-3 text-base text-white hover:text-white/80 transition-colors group px-6 py-4 border border-white/20 rounded-full bg-white/5 backdrop-blur-md"
               >
-                <Mail className="w-5 h-5" />
-                <span>{ctaConfig.email}</span>
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                <Mail className="w-5 h-5 shrink-0" />
+                <span className="break-all">{ctaConfig.email}</span>
+                <ArrowRight className="w-5 h-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             )}
           </div>

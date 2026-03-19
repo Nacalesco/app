@@ -39,7 +39,7 @@ export function ContactForm() {
     return (
         <section id="contact-form" className="w-full py-24 lg:py-32 bg-exvia-subtle/40">
             <div ref={sectionRef} className="container-large px-6 lg:px-12">
-                <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-24 items-center">
 
                     {/* Left — Text */}
                     <div
@@ -54,7 +54,7 @@ export function ContactForm() {
                                 Contacto
                             </span>
                         </div>
-                        <h2 className="text-4xl lg:text-5xl font-light text-exvia-base-black tracking-tight leading-tight mb-6">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-exvia-base-black tracking-tight leading-tight mb-6">
                             Hablemos de tu<br />
                             <span className="text-gradient font-medium">próximo proyecto</span>
                         </h2>

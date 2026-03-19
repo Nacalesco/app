@@ -53,12 +53,12 @@ function VideoPlayer({ video, index }: VideoPlayerProps) {
       onMouseLeave={() => isPlaying && setShowControls(false)}
     >
       {/* Video Container */}
-      <div className="relative h-[450px] md:h-[600px] bg-exvia-base-black">
+      <div className="relative w-full aspect-video bg-exvia-base-black">
         <video
           ref={videoRef}
           src={video.src}
           poster={video.thumbnail}
-          className="w-full h-full object-contain"
+          className="absolute inset-0 w-full h-full object-contain"
           onEnded={handleVideoEnd}
           playsInline
           loop

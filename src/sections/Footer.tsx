@@ -30,11 +30,11 @@ export function Footer() {
   return (
     <footer ref={ref} className="w-full bg-exvia-black text-white py-16 lg:py-24">
       <div className="container-large px-6 lg:px-12">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8">
           {/* Brand Column */}
           <div
             className={cn(
-              'lg:col-span-4 space-y-6 transition-all duration-800 ease-out-quart',
+              'col-span-2 lg:col-span-4 space-y-6 transition-all duration-800 ease-out-quart',
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             )}
           >

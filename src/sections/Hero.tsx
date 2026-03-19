@@ -65,7 +65,7 @@ export function Hero() {
           <h1 className="text-[clamp(3.5rem,10vw,10rem)] font-black tracking-[-0.04em] leading-[0.9] text-exvia-black drop-shadow-sm">
             {heroConfig.name}
           </h1>
-          <p className="mt-8 text-[clamp(0.85rem,1.5vw,1.25rem)] text-exvia-base-black/80 font-medium tracking-wide max-w-4xl mx-auto uppercase whitespace-nowrap overflow-hidden text-ellipsis px-4">
+          <p className="mt-6 text-[clamp(0.75rem,1.5vw,1.25rem)] text-exvia-base-black/80 font-medium tracking-wide max-w-4xl mx-auto uppercase px-4 text-center leading-relaxed">
             {heroConfig.roles.slice(0, 3).join(' • ')}
           </p>
         </div>
