@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useCallback, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { videosConfig } from '@/config';
@@ -16,18 +16,36 @@ interface VideoPlayerProps {
 
 function VideoPlayer({ video, index }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(true);
+
+  // Schedule controls to hide after 2 seconds
+  const scheduleHide = useCallback(() => {
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+    hideTimer.current = setTimeout(() => setShowControls(false), 2000);
+  }, []);
+
+  // Cancel any pending hide timer
+  const cancelHide = useCallback(() => {
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+  }, []);
+
+  useEffect(() => () => { if (hideTimer.current) clearTimeout(hideTimer.current); }, []);
 
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
+        setIsPlaying(false);
+        cancelHide();
+        setShowControls(true);
       } else {
         videoRef.current.play();
+        setIsPlaying(true);
+        scheduleHide();
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -40,6 +58,16 @@ function VideoPlayer({ video, index }: VideoPlayerProps) {
 
   const handleVideoEnd = () => {
     setIsPlaying(false);
+    cancelHide();
+    setShowControls(true);
+  };
+
+  // Tapping the video area while playing briefly shows controls then hides
+  const handleContainerClick = () => {
+    if (isPlaying) {
+      setShowControls(true);
+      scheduleHide();
+    }
   };
 
   return (
@@ -49,8 +77,9 @@ function VideoPlayer({ video, index }: VideoPlayerProps) {
         'border border-exvia-border hover:border-exvia-violet/30',
         'transition-all duration-500'
       )}
-      onMouseEnter={() => setShowControls(true)}
-      onMouseLeave={() => isPlaying && setShowControls(false)}
+      onMouseEnter={() => { cancelHide(); setShowControls(true); }}
+      onMouseLeave={() => { if (isPlaying) scheduleHide(); }}
+      onClick={handleContainerClick}
     >
       {/* Video Container */}
       <div className="relative w-full aspect-video bg-exvia-base-black">
@@ -70,14 +99,17 @@ function VideoPlayer({ video, index }: VideoPlayerProps) {
           className={cn(
             'absolute inset-0 flex items-center justify-center',
             'bg-gradient-to-t from-exvia-black/60 via-transparent to-transparent',
-            'transition-opacity duration-300',
-            showControls || !isPlaying ? 'opacity-100' : 'opacity-0'
+            'transition-opacity duration-300 pointer-events-none',
+            !isPlaying ? 'opacity-100' : (showControls ? 'opacity-100' : 'opacity-0')
           )}
         >
           <button
-            onClick={togglePlay}
+            onClick={(e) => {
+              e.stopPropagation();
+              togglePlay();
+            }}
             className={cn(
-              'w-16 h-16 rounded-full flex items-center justify-center',
+              'w-16 h-16 rounded-full flex items-center justify-center pointer-events-auto',
               'bg-exvia-violet/90 hover:bg-exvia-violet text-white',
               'backdrop-blur-sm transition-all duration-300',
               'transform hover:scale-110',
@@ -92,18 +124,20 @@ function VideoPlayer({ video, index }: VideoPlayerProps) {
           </button>
         </div>
 
-        {/* Controls */}
         <div
           className={cn(
             'absolute bottom-4 right-4 flex gap-2',
-            'transition-opacity duration-300',
-            showControls ? 'opacity-100' : 'opacity-0'
+            'transition-opacity duration-300 pointer-events-none',
+            !isPlaying ? 'opacity-100' : (showControls ? 'opacity-100' : 'opacity-0')
           )}
         >
           <button
-            onClick={toggleMute}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleMute();
+            }}
             className={cn(
-              'w-10 h-10 rounded-full flex items-center justify-center',
+              'w-10 h-10 rounded-full flex items-center justify-center pointer-events-auto',
               'bg-exvia-black/60 hover:bg-exvia-black/80 text-white',
               'backdrop-blur-sm transition-all duration-300'
             )}
