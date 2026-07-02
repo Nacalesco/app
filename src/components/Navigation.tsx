@@ -9,9 +9,9 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    // Fade in navbar after page load
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 1800);
@@ -28,6 +28,30 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Scroll spy
+  useEffect(() => {
+    const sectionIds = navigationConfig.links.map((link) => link.href.replace('#', ''));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean) as HTMLElement[];
+
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: '-20% 0px -70% 0px' }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const element = document.querySelector(href);
@@ -36,6 +60,8 @@ export function Navigation() {
       setIsMenuOpen(false);
     }
   };
+
+  const isActive = (href: string) => href.replace('#', '') === activeSection;
 
   return (
     <>
@@ -70,13 +96,17 @@ export function Navigation() {
                     onClick={(e) => handleNavClick(e, link.href)}
                     className={cn(
                       "text-base transition-colors duration-500 relative group",
-                      isScrolled ? "text-exvia-black/80 hover:text-exvia-black" : "text-white/90 hover:text-white"
+                      isScrolled ? "text-exvia-black/80 hover:text-exvia-black" : "text-white/90 hover:text-white",
+                      isActive(link.href) && (isScrolled ? "text-exvia-violet" : "text-white")
                     )}
                   >
                     {link.label}
                     <span className={cn(
-                      "absolute -bottom-1 left-0 w-0 h-px transition-all duration-300 group-hover:w-full",
-                      isScrolled ? "bg-exvia-black" : "bg-white"
+                      "absolute -bottom-1 left-0 h-px transition-all duration-300",
+                      isActive(link.href) ? "w-full" : "w-0 group-hover:w-full",
+                      isActive(link.href)
+                        ? "bg-exvia-violet"
+                        : isScrolled ? "bg-exvia-black" : "bg-white"
                     )} />
                   </a>
                 ))}
@@ -148,7 +178,8 @@ export function Navigation() {
                   'text-3xl font-semibold text-exvia-black transition-all duration-500 ease-out-quart',
                   isMenuOpen
                     ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
+                    : 'opacity-0 translate-y-8',
+                  isActive(link.href) && 'text-exvia-violet'
                 )}
                 style={{ transitionDelay: isMenuOpen ? `${index * 100}ms` : '0ms' }}
               >

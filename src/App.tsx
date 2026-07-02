@@ -1,4 +1,3 @@
-import { } from 'react';
 import { Navigation } from '@/components/Navigation';
 import { PageOverlay } from '@/components/PageOverlay';
 import { Hero } from '@/sections/Hero';
@@ -7,6 +6,7 @@ import { Services } from '@/sections/Services';
 import { Skills } from '@/sections/Skills';
 import { Portfolio } from '@/sections/Portfolio';
 import { Videos } from '@/sections/Videos';
+import { Copywriting } from '@/sections/Copywriting';
 import { ContactForm } from '@/sections/ContactForm';
 import { CTA } from '@/sections/CTA';
 import { Footer } from '@/sections/Footer';
@@ -31,6 +31,7 @@ function App() {
         <Skills />
         <Portfolio />
         <Videos />
+        <Copywriting />
         <ContactForm />
         <CTA />
       </main>

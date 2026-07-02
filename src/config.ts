@@ -267,6 +267,9 @@ export interface VideoItem {
   description: string;
   src: string;
   thumbnail?: string;
+  category?: string;
+  duration?: string;
+  featured?: boolean;
 }
 
 export interface VideosConfig {
@@ -285,11 +288,166 @@ export const videosConfig: VideosConfig = {
       title: "Agencia de Marketing Digital",
       description: "Video promocional desarrollado para presentación de servicios de agencia de marketing digital. Muestra la propuesta de valor, servicios ofrecidos y enfoque estratégico.",
       src: "/media/video-marketing.mp4",
+      category: "Marketing",
+      duration: "1:45",
+      featured: true,
     },
     {
       title: "Golden Groove Sunset - Evento",
       description: "Video del evento Golden Groove Sunset en Antares del Faro. Captura la atmósfera, la música y la experiencia única de este evento de música electrónica.",
       src: "/media/video-evento.mp4",
+      category: "Evento",
+      duration: "2:10",
+    },
+  ],
+};
+
+// Skills section configuration
+export interface ToolItem {
+  name: string;
+  category: string;
+  icon: string;
+  color: string;
+}
+
+export interface SkillItem {
+  label: string;
+  level: number;
+  cert: string | null;
+}
+
+export interface SkillsConfig {
+  label: string;
+  heading: string;
+  tools: ToolItem[];
+  skills: SkillItem[];
+}
+
+export const skillsConfig: SkillsConfig = {
+  label: "Herramientas & Habilidades",
+  heading: "Tecnologías y herramientas que uso a diario",
+  tools: [
+    { name: 'Meta Ads', category: 'Publicidad', icon: '📣', color: 'from-blue-500/20 to-blue-600/10' },
+    { name: 'Instagram', category: 'Social Media', icon: '📸', color: 'from-pink-500/20 to-purple-500/10' },
+    { name: 'Facebook', category: 'Social Media', icon: '👥', color: 'from-blue-600/20 to-blue-700/10' },
+    { name: 'Canva', category: 'Diseño', icon: '🎨', color: 'from-teal-400/20 to-cyan-500/10' },
+    { name: 'TikTok', category: 'Social Media', icon: '🎵', color: 'from-slate-400/20 to-slate-500/10' },
+    { name: 'Trello', category: 'Planificación', icon: '📋', color: 'from-blue-400/20 to-blue-500/10' },
+  ],
+  skills: [
+    { label: 'Estrategia Digital', level: 92, cert: null },
+    { label: 'Social Media', level: 90, cert: null },
+    { label: 'Creación de Contenido', level: 88, cert: null },
+    { label: 'Análisis de Datos', level: 78, cert: null },
+    { label: 'Branding & Identidad', level: 82, cert: null },
+    { label: 'Inglés', level: 0, cert: '/media/certificado-ingles.pdf' },
+  ],
+};
+
+// Copywriting section configuration
+export interface CopywritingLink {
+  label: string;
+  url: string;
+}
+
+export interface CopywritingExperience {
+  id: number;
+  company: string;
+  role: string;
+  client?: string;
+  items: string[];
+  links: CopywritingLink[];
+}
+
+export interface CopywritingConfig {
+  label: string;
+  heading: string;
+  description: string;
+  experiences: CopywritingExperience[];
+}
+
+export const copywritingConfig: CopywritingConfig = {
+  label: "Copywriting",
+  heading: "Habilidades de Copywriting",
+  description: "Selección de contenido, redacción publicitaria y proyectos de comunicación desarrollados en experiencias profesionales, freelance y académicas.",
+  experiences: [
+    {
+      id: 1,
+      company: 'Social Impulse Agency',
+      role: 'Copywriter para LinkedIn',
+      client: 'Buenos Aires Sustainability Tech Cluster',
+      items: [
+        'Creación de contenido educativo enfocado en sustentabilidad y transporte',
+        'Investigación de temas relacionados con la industria y transformación de información en contenido',
+        'Redacción de copys para LinkedIn y adaptación de mensajes según la audiencia',
+        'Desarrollo de comunicación enfocada en generar interés y aportar valor',
+      ],
+      links: [
+        { label: 'Post 1', url: 'https://www.linkedin.com/posts/mobilitytechcluster_movilidadsostenible-electromovilidad-electricvehicles-activity-7359257889393303553-giMk' },
+        { label: 'Post 2', url: 'https://www.linkedin.com/posts/mobilitytechcluster_movilidadsostenible-electromovilidad-electricvehicles-activity-7358142998221668353--OnU' },
+        { label: 'Post 3', url: 'https://www.linkedin.com/posts/mobilitytechcluster_movilidadsostenible-smartmobility-electromovilidad-activity-7356348061939367936-tyNv' },
+      ],
+    },
+    {
+      id: 2,
+      company: 'Digital Pro',
+      role: 'Content Creator',
+      items: [
+        'Redacción de newsletters',
+        'Copy para publicaciones de Instagram',
+        'Textos para carruseles',
+        'Contenido para historias',
+        'Guiones para reels y videos cortos',
+        'Planificación de calendarios de contenido',
+      ],
+      links: [
+        { label: 'Planificación Reels', url: 'https://docs.google.com/spreadsheets/d/1qYaA2R2HXxBZT2Acgs0YvpQmr-zEaV3I5p1m-sCcBFw' },
+        { label: 'Ejemplo Copy 1', url: 'https://docs.google.com/document/d/1QQKRYyVcot-Wz5RarD3I_ai1CaZ5Rwr6INcpdDgRRWI' },
+        { label: 'Ejemplo Copy 2', url: 'https://docs.google.com/document/d/1D6ISFoc8-NMmKh7URpnVlih8GvtkcdFSmiW5fLFBisk' },
+        { label: 'Carruseles', url: 'https://drive.google.com/drive/folders/13KRwQQBvBEUDZyDrtNJG05En3dIAtPa7' },
+        { label: 'Planificación Carruseles', url: 'https://docs.google.com/spreadsheets/d/1UkdmTEn1YK5tHuwFTnMMKABf8kWcufB6QAMgISd-J7U' },
+        { label: 'Email Marketing', url: 'https://docs.google.com/spreadsheets/d/1hcQYOBn-anm5mUpoRrnfAvI16K1GDgDNcFQsenKB3JA' },
+      ],
+    },
+    {
+      id: 3,
+      company: 'Proyectos Freelance',
+      role: 'Content Creator & Copywriter',
+      items: [
+        'Desarrollo de ideas y conceptos de contenido',
+        'Redacción de copys y guiones para videos promocionales',
+        'Creación de mensajes alineados a objetivos de comunicación y marca',
+        'Participación frente a cámara y edición de contenido audiovisual',
+      ],
+      links: [
+        { label: 'Portafolio General', url: 'https://docs.google.com/document/d/1sz9ITe3GQ1_lRRSeXhpgzhzglviGg_NBYL_j05t39xw' },
+      ],
+    },
+    {
+      id: 4,
+      company: 'Guión Audiovisual – Valsuar',
+      role: 'Guión Publicitario',
+      items: [
+        'Investigación del proyecto y definición del enfoque comunicacional',
+        'Desarrollo de una narrativa orientada a generar conexión emocional',
+        'Estructura de video con apertura, desarrollo y llamado a la acción',
+        'Adaptación del mensaje para transmitir una experiencia de marca',
+      ],
+      links: [
+        { label: 'Ver Guión', url: 'https://docs.google.com/document/d/14gSS1X7nfkykWqT0hn3PZ2CAPzYXDwvWrJfVZBMS57o' },
+      ],
+    },
+    {
+      id: 5,
+      company: 'Proyectos Académicos',
+      role: 'Marketing & Publicidad Digital',
+      items: [
+        'Desarrollo del concepto creativo y mensaje principal',
+        'Creación de una narrativa orientada a generar impacto emocional',
+        'Redacción de guión publicitario',
+        'Aplicación de estrategias de comunicación enfocadas en la audiencia',
+      ],
+      links: [],
     },
   ],
 };
@@ -352,6 +510,7 @@ export const footerConfig: FooterConfig = {
         { label: "Servicios", href: "#services" },
         { label: "Proyectos", href: "#portfolio" },
         { label: "Videos", href: "#videos" },
+        { label: "Copywriting", href: "#copywriting" },
       ],
     },
     {

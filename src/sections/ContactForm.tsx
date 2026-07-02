@@ -15,7 +15,7 @@ export function ContactForm() {
         setStatus('sending');
 
         // Build mailto link with form data and open email client
-        const subject = encodeURIComponent(`Contacto desde portfolo - ${formData.name}`);
+        const subject = encodeURIComponent(`Contacto desde portafolio - ${formData.name}`);
         const body = encodeURIComponent(
             `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
         );
@@ -110,6 +110,7 @@ export function ContactForm() {
                                     type="text"
                                     required
                                     placeholder="Tu nombre"
+                                    aria-label="Nombre"
                                     value={formData.name}
                                     onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
                                     className={cn(inputStyles, 'pl-12')}
@@ -123,6 +124,7 @@ export function ContactForm() {
                                     type="email"
                                     required
                                     placeholder="tu@email.com"
+                                    aria-label="Email"
                                     value={formData.email}
                                     onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
                                     className={cn(inputStyles, 'pl-12')}
@@ -136,6 +138,7 @@ export function ContactForm() {
                                     required
                                     rows={5}
                                     placeholder="Contame sobre tu proyecto..."
+                                    aria-label="Mensaje"
                                     value={formData.message}
                                     onChange={(e) => setFormData((p) => ({ ...p, message: e.target.value }))}
                                     className={cn(inputStyles, 'pl-12 resize-none')}

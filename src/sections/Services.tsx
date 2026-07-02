@@ -34,7 +34,7 @@ function ServiceCard({ service, index }: ServiceCardProps) {
       <div className="relative z-10 flex flex-col h-full">
         {/* Header Row: Icon and Index */}
         <div className="flex items-center justify-between mb-8">
-          <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-exvia-border/50 group-hover:border-exvia-violet/30 group-hover:shadow-[0_0_20px_rgba(138,43,226,0.15)] transition-all duration-500">
+          <div className="w-14 h-14 flex items-center justify-center rounded-2xl bg-white shadow-sm border border-exvia-border/50 group-hover:border-exvia-violet/30 group-hover:shadow-[0_0_20px_var(--exvia-violet-light)] transition-all duration-500">
             <Icon className="w-6 h-6 text-exvia-base-black group-hover:text-exvia-violet transition-colors duration-500" />
           </div>
           <div className="text-xl font-geist-mono font-light text-exvia-base-black/20 group-hover:text-exvia-violet/40 transition-colors duration-500">

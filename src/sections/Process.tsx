@@ -1,4 +1,3 @@
-import { } from 'react';
 import { cn } from '@/lib/utils';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { Search, Lightbulb, Rocket, BarChart3 } from 'lucide-react';

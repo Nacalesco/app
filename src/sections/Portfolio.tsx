@@ -1,15 +1,14 @@
-import { } from 'react';
 import { cn } from '@/lib/utils';
 import { useScrollAnimation, useStaggerAnimation } from '@/hooks/useScrollAnimation';
 import { ArrowUpRight, FileText, CheckCircle2 } from 'lucide-react';
-import { portfolioConfig } from '@/config';
+import { portfolioConfig, type ProjectItem } from '@/config';
 
 const scrollTo = (id: string) => {
   const el = document.querySelector(id);
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
-function ProjectCard({ project, index, isVisible }: { project: any; index: number; isVisible: boolean }) {
+function ProjectCard({ project, index, isVisible }: { project: ProjectItem; index: number; isVisible: boolean }) {
   return (
     <div
       className={cn(
@@ -101,8 +100,8 @@ export function Portfolio() {
   const { containerRef: gridRef, visibleItems } = useStaggerAnimation(portfolioConfig.projects.length + 1, 120);
 
   return (
-    <section id="portfolio" className="w-full py-24 lg:py-32 relative" style={{ backgroundColor: '#EBE1D5' }}>
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, #F5EDE2 0%, #EBE1D5 100%)' }} />
+    <section id="portfolio" className="w-full py-24 lg:py-32 relative bg-exvia-subtle">
+      <div className="absolute inset-0 bg-gradient-to-b from-exvia-white to-exvia-subtle" />
 
       <div className="container-large px-6 lg:px-12 relative z-10">
         {/* Header */}

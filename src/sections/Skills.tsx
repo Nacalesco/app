@@ -1,24 +1,8 @@
-import { } from 'react';
 import { cn } from '@/lib/utils';
 import { useScrollAnimation, useStaggerAnimation } from '@/hooks/useScrollAnimation';
+import { skillsConfig } from '@/config';
 
-const tools = [
-    { name: 'Meta Ads', category: 'Publicidad', icon: '📣', color: 'from-blue-500/20 to-blue-600/10' },
-    { name: 'Instagram', category: 'Social Media', icon: '📸', color: 'from-pink-500/20 to-purple-500/10' },
-    { name: 'Facebook', category: 'Social Media', icon: '👥', color: 'from-blue-600/20 to-blue-700/10' },
-    { name: 'Canva', category: 'Diseño', icon: '🎨', color: 'from-teal-400/20 to-cyan-500/10' },
-    { name: 'TikTok', category: 'Social Media', icon: '🎵', color: 'from-slate-400/20 to-slate-500/10' },
-    { name: 'Trello', category: 'Planificación', icon: '📋', color: 'from-blue-400/20 to-blue-500/10' },
-];
-
-const skills = [
-    { label: 'Estrategia Digital', level: 92, cert: null },
-    { label: 'Social Media', level: 90, cert: null },
-    { label: 'Creación de Contenido', level: 88, cert: null },
-    { label: 'Análisis de Datos', level: 78, cert: null },
-    { label: 'Branding & Identidad', level: 82, cert: null },
-    { label: 'Inglés', level: 0, cert: '/media/certificado-ingles.pdf' },
-];
+const { tools, skills } = skillsConfig;
 
 export function Skills() {
     const { ref: headerRef, isVisible: headerVisible } = useScrollAnimation({ threshold: 0.2 });
@@ -39,7 +23,7 @@ export function Skills() {
                     >
                         <div className="w-12 h-px bg-exvia-violet" />
                         <span className="text-sm font-geist-mono uppercase tracking-widest text-exvia-violet">
-                            Herramientas & Habilidades
+                            {skillsConfig.label}
                         </span>
                     </div>
                     <h2
@@ -49,8 +33,8 @@ export function Skills() {
                         )}
                         style={{ transitionDelay: '100ms' }}
                     >
-                        Tecnologías y herramientas que{' '}
-                        <span className="text-gradient">uso a diario</span>
+                        {skillsConfig.heading.split(' ').slice(0, -3).join(' ')}{' '}
+                        <span className="text-gradient">{skillsConfig.heading.split(' ').slice(-3).join(' ')}</span>
                     </h2>
                 </div>
 
@@ -67,7 +51,6 @@ export function Skills() {
                             )}
                             style={{ transitionDelay: `${i * 60}ms` }}
                         >
-                            {/* Hover gradient */}
                             <div className={cn('absolute inset-0 rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-400', tool.color)} />
                             <div className="relative z-10 flex flex-col items-center text-center gap-2">
                                 <span className="text-2xl">{tool.icon}</span>

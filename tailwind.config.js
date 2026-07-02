@@ -134,6 +134,14 @@ module.exports = {
           from: { transform: "rotate(0deg)" },
           to: { transform: "rotate(360deg)" },
         },
+        "modal-backdrop-in": {
+          from: { opacity: "0", backdropFilter: "blur(0px)" },
+          to: { opacity: "1", backdropFilter: "blur(12px)" },
+        },
+        "modal-content-in": {
+          from: { opacity: "0", transform: "scale(0.95) translateY(10px)" },
+          to: { opacity: "1", transform: "scale(1) translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -148,6 +156,8 @@ module.exports = {
         "text-slide-in": "text-slide-in 0.35s cubic-bezier(0.250, 0.460, 0.450, 0.940) forwards",
         "slide-in-right": "slide-in-right 0.5s cubic-bezier(0.215, 0.610, 0.355, 1) forwards",
         "spin-slow": "spin-slow 20s linear infinite",
+        "modal-backdrop-in": "modal-backdrop-in 0.3s ease-out forwards",
+        "modal-content-in": "modal-content-in 0.35s cubic-bezier(0.165, 0.840, 0.440, 1) forwards",
       },
       transitionTimingFunction: {
         'out-quad': 'cubic-bezier(0.250, 0.460, 0.450, 0.940)',
