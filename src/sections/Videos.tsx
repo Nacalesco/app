@@ -341,12 +341,11 @@ function VideoLightbox({ video, isOpen, onClose, onPrev, onNext, hasPrev, hasNex
 
 interface VideoCardProps {
   video: VideoItem;
-  index: number;
   isFeatured?: boolean;
   onClick: () => void;
 }
 
-function VideoCard({ video, index, isFeatured, onClick }: VideoCardProps) {
+function VideoCard({ video, isFeatured, onClick }: VideoCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -525,7 +524,6 @@ export function Videos() {
           <div className="col-span-full" style={{ transitionDelay: '100ms' }}>
             <VideoCard
               video={featuredVideo}
-              index={featuredIdx}
               isFeatured
               onClick={() => handleOpen(featuredIdx)}
             />
@@ -538,7 +536,6 @@ export function Videos() {
               <div key={video.title} style={{ transitionDelay: `${200 + originalIndex * 100}ms` }}>
                 <VideoCard
                   video={video}
-                  index={originalIndex}
                   onClick={() => handleOpen(originalIndex)}
                 />
               </div>
